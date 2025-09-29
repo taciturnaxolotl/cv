@@ -24,6 +24,9 @@ jobs:
         with:
           packages: imagemagick latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
           version: 1.0
+          execute_install_scripts: true
+      - name: "run install scripts"
+        run: sudo apt install imagemagick latexmk texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended
       - name: Build LaTeX with Makefile
         run: make
       - name: Convert PDF to JPEG
