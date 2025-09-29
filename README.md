@@ -2,6 +2,8 @@
 
 This is my CV and is adapted from the [jitinnair1/autoCV](https://github.com/jitinnair1/autoCV) project.
 
+![preview of the cv](https://cv.dunkirk.sh/cv.jpeg)
+
 ### Setup
 
 For this to work you need `latexmk` installed which can be done with `brew` on darwin:
