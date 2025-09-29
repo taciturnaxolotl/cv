@@ -22,7 +22,7 @@ jobs:
       - name: Cache APT packages
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          packages: imagemagick texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk
+          packages: imagemagick texlive-full
           version: 1.0
       - name: Build LaTeX with Makefile
         run: make
