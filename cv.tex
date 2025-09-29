@@ -29,22 +29,6 @@
 \documentclass[a4paper,10pt]{article}
 
 %----------------------------------------------------------------------------------------
-%	FONT
-%----------------------------------------------------------------------------------------
-
-% % fontspec allows you to use TTF/OTF fonts directly
-% \usepackage{fontspec}
-% \defaultfontfeatures{Ligatures=TeX}
-
-% % modified for ShareLaTeX use
-% \setmainfont[
-% SmallCapsFont = Fontin-SmallCaps.otf,
-% BoldFont = Fontin-Bold.otf,
-% ItalicFont = Fontin-Italic.otf
-% ]
-% {Fontin.otf}
-
-%----------------------------------------------------------------------------------------
 %	PACKAGES
 %----------------------------------------------------------------------------------------
 \usepackage{url}
@@ -81,15 +65,10 @@
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{10pt}{10pt}
 
-%for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
-
 %Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
 
 %for social icons
 \usepackage{fontawesome5}
@@ -135,29 +114,10 @@
 %	TITLE
 %----------------------------------------------------------------------------------------
 
-% \begin{tabularx}{\linewidth}{ @{}X X@{} }
-% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
-% \raisebox{-0.05\height}\faGithub\ username \ | \
-% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
-% \end{tabularx}
-
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{KIERAN KLUKAS} \\[7.5pt]
-Columbus, Ohio \textbar{} +1 380 (254) 2562 \textbar{} me@dunkirk.sh \textbar{} www.linkedin.com/in/kieran-klukas
+\Huge{KIERAN KLUKAS} \\[8pt]
+Columbus, Ohio \textbar{} \href{tel:3802542562}{(380) 254-2562} \textbar{} \href{mailto:me@dunkirk.sh}{me@dunkirk.sh} \textbar{} \href{https://linkedin.com/in/kieran-klukas}{linkedin.com/in/kieran-klukas}
 \end{tabularx}
-
-%----------------------------------------------------------------------------------------
-%	EDUCATION
-%----------------------------------------------------------------------------------------
-\section{EDUCATION}
-
-\textbf{Cedarville University} \hfill Cedarville, OH\\
-Dual Enrollment, Computer Engineering \hfill Anticipated 05/2025\\
-Completing all senior year courses through Cedarville's Dual Enrollment program and on track to finish freshman Computer Engineering requirements before graduating high school.
-
-%----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
-%----------------------------------------------------------------------------------------
 
 \section{SUMMARY}
 17-year-old homeschooled high school student with strong technical and interpersonal skills seeking to obtain an internship in software engineering or cybersecurity. Passionate about hardware and software integration, robotics, and cybersecurity. Goals include gaining real-world experience and working in the technology industry. Additional skills include:
@@ -167,55 +127,85 @@ Completing all senior year courses through Cedarville's Dual Enrollment program 
 \item Server Management \& Linux
 \end{itemize}
 
+%----------------------------------------------------------------------------------------
+%	EDUCATION
+%----------------------------------------------------------------------------------------
+\section{EDUCATION}
+
+\textbf{ABET Accredited Cedarville University (CAE-CD, CAE-CO)} \hfill Cedarville, OH\\
+\textit{Dual Enrollment, Computer Engineering \& Cyber Operations} \hfill Anticipated 05/2026\\
+\begin{minipage}{0.8\textwidth}
+Completing all senior year courses through Cedarville's Dual Enrollment program and on track to finish freshman Computer Engineering requirements before graduating high school while also taking several Cyber Operations courses.
+\end{minipage}
+
+%----------------------------------------------------------------------------------------
+% EXPERIENCE SECTIONS
+%----------------------------------------------------------------------------------------
+
 \section{EXPERIENCE}
 
 \textbf{Cedarville University Center for Advancement of Cybersecurity} \hfill Cedarville, OH\\
 \textit{GenCyber Camp Participant} \hfill 06/2025
+\begin{minipage}{0.8\textwidth}
 \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
 \item Achieved 2nd place in Cyber Skyline Cyber Lab Kit Intro CTF with 1st place finishing time of 57:58.
 \item Received Cedarville University Center for Advancement of Cybersecurity challenge coin.
 \end{itemize}
+\end{minipage}
 
-\textit{Crimson Defense CDCTF Team Member - Prochoroume} \hfill 2025
+\textit{Crimson Defense CDCTF Team Member - Prochoroume} \hfill 10/2025
+\begin{minipage}{0.8\textwidth}
 \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
 \item Placed 6th out of 51 college teams in cybersecurity capture the flag competition.
-\item Specialized in social engineering and reverse engineering challenges.
+\item Specialized in log \& net analysis challenges.
 \end{itemize}
+\end{minipage}
 
 \textbf{Elmer W. Engstrom School of Engineering and Computer Science} \hfill Cedarville, OH\\
-\textit{Cardboard Canoe Race Team Member} \hfill 2025
+\textit{Cardboard Canoe Race Team Member} \hfill 10/2025
+\begin{minipage}{0.8\textwidth}
 \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
 \item Worked with a 4-person team to design and build a canoe with a 40' roll of cardboard and a roll of packing tape.
-\item Placed 2nd overall in the race portion of the project.
+\item Placed unknown overall in the race portion of the project against 35 other teams.
 \end{itemize}
+\end{minipage}
 
 \textbf{FIRST} \hfill Columbus, OH\\
 \textit{Chair of the Outreach and Sustainability Committee for the Ohio Youth Advisory Council} \hfill 08/2025--Present
+\begin{minipage}{0.8\textwidth}
 \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
 \item Lead team leadership and public outreach initiatives for Ohio FIRST programs.
 \item Coordinate sustainability efforts across multiple robotics teams statewide.
 \end{itemize}
+\end{minipage}
 
 \textit{Programming Team Co-lead @ FRC team 1317} \hfill 11/2023--Present
+\begin{minipage}{0.8\textwidth}
 \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
 \item Co-lead programming team for competitive robotics using WPILib framework.
 \item Develop and maintain robot control systems for FIRST Robotics Competition.
+\item Winning alliance with teams 4028 and 1787 in the 2025 Ohio State Championship.
 \end{itemize}
+\end{minipage}
 
 \textbf{Hack Club} \hfill Remote\\
 \textit{Volunteer Software Developer} \hfill 10/2023--Present
+\begin{minipage}{0.8\textwidth}
 \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-\item Designed and built hackatime scaling it to handle over 25,000 simultaneous teenagers logging coding time during High Seas event.
-\item Developed multiple Slack bots to moderate and facilitate events through the Hack Club Slack workspace.
+\item Designed and built Hackatime in Go, scaling it to handle over 25,000 simultaneous teenagers logging coding time during High Seas event.
+\item Developed multiple Slack bots to improve UX and give a sense of personality in the Hack Club Slack workspace.
 \item Utilized PostgreSQL and server management skills to ensure system reliability.
 \end{itemize}
+\end{minipage}
 
 %----------------------------------------------------------------------------------------
 %	ACTIVITIES
 %----------------------------------------------------------------------------------------
 \section{ACTIVITIES}
 \begin{center}
-{\small Cybersecurity CTF Competitions -- 2024--Present \textbar{} FIRST Robotics Competition -- 2023--Present \textbar{} Hack Club Community Volunteer -- 2023--Present \textbar{} Church Audio/Visual Ministry -- 2023--Present \textbar{} Orchestra -- 2022--2024}
+{\small Cybersecurity CTF Competitions -- 2024--Present \textbar{} FIRST Robotics Competition -- 2023--Present \textbar{} Orchestra -- 2022--2024}
+
+{\small Hack Club Community Volunteer -- 2023--Present \textbar{} Church Audio/Visual Ministry -- 2023--Present}
 \end{center}
 
 \vfill
