@@ -19,13 +19,15 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Build LaTeX
-        uses: dante-ev/latex-action@latest
+      - name: Cache APT packages
+        uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          root_file: ${{ env.FILE }}
-          working_directory: ${{ env.DIR }}
-      - name: Install ImageMagick
-        run: sudo apt-get update && sudo apt-get install -y imagemagick
+          packages: imagemagick
+          version: 1.0
+      - name: Compile LaTeX document
+        uses: xu-cheng/latex-action@v4
+        with:
+          root_file: ${{ env.FILE }}.tex
       - name: Convert PDF to JPEG
         run: |
           convert -density 300 ${{ env.DIR }}/${{ env.FILE }}.pdf[0] -quality 90 -flatten cv.jpeg
