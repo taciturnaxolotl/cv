@@ -22,12 +22,10 @@ jobs:
       - name: Cache APT packages
         uses: awalsh128/cache-apt-pkgs-action@latest
         with:
-          packages: imagemagick
+          packages: imagemagick texlive-latex-base texlive-latex-recommended texlive-latex-extra texlive-fonts-recommended latexmk
           version: 1.0
-      - name: Compile LaTeX document
-        uses: xu-cheng/latex-action@v4
-        with:
-          root_file: ${{ env.FILE }}.tex
+      - name: Build LaTeX with Makefile
+        run: make
       - name: Convert PDF to JPEG
         run: |
           convert -density 300 ${{ env.DIR }}/${{ env.FILE }}.pdf[0] -quality 90 -flatten cv.jpeg
