@@ -64,3 +64,27 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+      - name: Purge Cloudflare cache
+        if: ${{ success() }}
+        env:
+          CF_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CF_ZONE: ${{ secrets.CLOUDFLARE_ZONE_ID }}
+        run: |
+          set -euo pipefail
+
+          # check secret existence
+          : "${CF_TOKEN:?CLOUDFLARE_API_TOKEN is required}"
+          : "${CF_ZONE:?CLOUDFLARE_ZONE_ID is required}"
+
+          # check token validity
+          curl -sS -X GET "https://api.cloudflare.com/client/v4/user/tokens/verify" \
+            -H "Authorization: Bearer $CF_TOKEN" \
+            -H "Content-Type: application/json" | tee /tmp/cf_verify.json
+          jq -e '.success == true' /tmp/cf_verify.json >/dev/null
+
+          # purge the zone
+          curl -sS -X POST "https://api.cloudflare.com/client/v4/zones/$CF_ZONE/purge_cache" \
+            -H "Authorization: Bearer $CF_TOKEN" \
+            -H "Content-Type: application/json" \
+            --data '{"purge_everything":true}' | tee /tmp/cf_purge.json
+          jq -e '.success == true' /tmp/cf_purge.json >/dev/null
