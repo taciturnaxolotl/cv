@@ -46,10 +46,9 @@
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{10pt}{10pt}
 
-%Setup hyperref package, and colours for links
-\usepackage[unicode, draft=false]{hyperref}
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
+\usepackage[hidelinks]{hyperref} % For hyperlinks, with hidden link borders
+\urlstyle{same} % URL style matches surrounding text
+\newcommand{\bref}[2]{\href{#1}{\color{blue}{#2}}}
 
 %debug page outer frames
 %\usepackage{showframe}
@@ -79,8 +78,9 @@
     }
 
 %make sure output is machine readable
+\usepackage[utf8]{inputenc}
 \input{glyphtounicode}
-\pdfgentounicode=1
+\pdfgentounicode=1 % Ensure Unicode mapping for better text extraction
 
 %----------------------------------------------------------------------------------------
 %	BEGIN DOCUMENT
@@ -96,15 +96,15 @@
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
 \Huge{KIERAN KLUKAS} \\[8pt]
-Columbus, Ohio \textbar{} \href{tel:3802542562}{(380) 254-2562} \textbar{} \href{mailto:me@dunkirk.sh}{me@dunkirk.sh} \textbar{} \href{https://linkedin.com/in/kieran-klukas}{linkedin.com/in/kieran-klukas}
+Westerville, OH 43081 \textbar{} \href{tel:+13802542562}{(380) 254-2562} \textbar{} \href{mailto:kieran@dunkirk.sh}{kieran@dunkirk.sh} \textbar{} \href{https://linkedin.com/in/kieran-klukas}{linkedin.com/in/kieran-klukas} \textbar{} \href{https://github.com/taciturnaxolotl}{github.com/taciturnaxolotl}
 \end{tabularx}
 
 \section{SUMMARY}
-17-year-old homeschooled high school student with strong technical and interpersonal skills seeking to obtain an internship in software engineering or cybersecurity. Passionate about hardware and software integration, robotics, and cybersecurity. Goals include gaining real-world experience and working in the technology industry. Additional skills include:
+Aspiring Computer Engineering and Cyber Operations dual enrollment student with strong technical and interpersonal skills seeking an internship in software engineering or cybersecurity. Passionate about hardware-software integration, robotics, and cybersecurity. Goals include gaining real-world experience and working in the technology sector. Additional skills include:
 \begin{itemize}[nosep,leftmargin=1em, itemsep=3pt,label=$\bullet$]
-\item 5+ years Programming Experience
-\item KiCAD \& Hardware Design
-\item Server Management \& Linux
+\item 5+ years of programming experience
+\item KiCad and hardware design
+\item Server management and Linux
 \end{itemize}
 
 %----------------------------------------------------------------------------------------
@@ -112,11 +112,11 @@ Columbus, Ohio \textbar{} \href{tel:3802542562}{(380) 254-2562} \textbar{} \href
 %----------------------------------------------------------------------------------------
 \section{EDUCATION}
 
-\textbf{ABET Accredited Cedarville University (CAE-CD, CAE-CO)} \hfill Cedarville, OH\\
-\textit{Dual Enrollment, Computer Engineering \& Cyber Operations} \hfill Anticipated 05/2026\\
+\textbf{ABET-accredited Cedarville University (CAE-CD, CAE-CO)} \hfill Cedarville, OH\\
+\textit{Dual Enrollment, Computer Engineering and Cyber Operations} \hfill Anticipated May 2026\\
 \begin{minipage}{\mpwidth}
-Completing all senior year courses through Cedarville's Dual Enrollment program and on track to finish freshman Computer Engineering requirements before graduating high school while also taking several Cyber Operations courses.\\
-\underline{Relevant Coursework:} Basic Cyber Manuevers; Engineering Profession; Calculus 1
+Completing all senior year courses through Cedarville’s Dual Enrollment program and on track to finish freshman Computer Engineering requirements before graduating high school while also taking several Cyber Operations courses.\\
+\underline{Relevant Coursework:} Basic Cyber Maneuvers; The Engineering Profession; Calculus I
 \end{minipage}
 
 %----------------------------------------------------------------------------------------
@@ -126,56 +126,56 @@ Completing all senior year courses through Cedarville's Dual Enrollment program 
 \section{EXPERIENCE}
 
 \textbf{Cedarville University Center for Advancement of Cybersecurity} \hfill Cedarville, OH\\
-\textit{GenCyber Camp Participant} \hfill 06/2025
+\textit{GenCyber Camp Participant} \hfill Jun. 2025
 \begin{minipage}{\mpwidth}
 \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-\item Achieved 2nd place in Cyber Skyline Cyber Lab Kit Intro CTF with 1st place time of 57:58.
+\item Achieved 2nd place in Cyber Skyline Cyber Lab Kit Intro CTF, with a 1st place time of 57:58.
 \item Received Cedarville University Center for Advancement of Cybersecurity challenge coin.
 \end{itemize}
 \end{minipage}
 
-\textit{Crimson Defense CDCTF Team Member - Prochoroume} \hfill 10/2025
+\textit{Crimson Defense CDCTF Team Member -- Prochoroume} \hfill Sep. 2025
 \begin{minipage}{\mpwidth}
 \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-\item Placed 6th out of 51 college teams in cybersecurity capture the flag competition.
-\item Specialized in log \& net analysis challenges.
+\item Placed 6th out of 51 college teams in cybersecurity capture-the-flag competition.
+\item Specialized in log and network analysis challenges.
 \end{itemize}
 \end{minipage}
 
 \textbf{Elmer W. Engstrom School of Engineering and Computer Science} \hfill Cedarville, OH\\
-\textit{Cardboard Canoe Race Team Member} \hfill 10/2025
+\textit{Cardboard Canoe Race Team Member} \hfill Sep. 2025--Oct. 2025
 \begin{minipage}{\mpwidth}
 \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-\item Worked with a 4-person team to design and build a canoe with a 40' roll of cardboard and a roll of packing tape.
+\item Worked with a 4-person team to design and build a canoe using a 40-foot roll of cardboard and a roll of packing tape.
 \item Placed unknown overall in the race portion of the project against 35 other teams.
 \end{itemize}
 \end{minipage}
 
 \textbf{FIRST} \hfill Columbus, OH\\
-\textit{Chair of the Outreach and Sustainability Committee for the Ohio Youth Advisory Council} \hfill 08/2025--Present
+\textit{Chair, Outreach and Sustainability Committee, Ohio Youth Advisory Council} \hfill Aug. 2025--Present
 \begin{minipage}{\mpwidth}
 \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-\item Lead team leadership and public outreach initiatives for Ohio FIRST programs.
+\item Lead outreach and leadership initiatives for Ohio FIRST programs.
 \item Coordinate sustainability efforts across multiple robotics teams statewide.
 \end{itemize}
 \end{minipage}
 
-\textit{Programming Team Co-lead @ FRC team 1317} \hfill 11/2023--Present
+\textit{Programming Team Co-Lead at FRC Team 1317} \hfill Nov. 2023--Present
 \begin{minipage}{\mpwidth}
 \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-\item Co-lead programming team for competitive robotics using WPILib framework.
+\item Co-led the programming team for competitive robotics using the WPILib framework.
 \item Develop and maintain robot control systems for FIRST Robotics Competition.
-\item Winning alliance with teams 4028 and 1787 in the 2025 Ohio State Championship.
+\item Helped secure a winning alliance with teams 4028 and 1787 at the 2025 Ohio State Championship.
 \end{itemize}
 \end{minipage}
 
 \textbf{Hack Club} \hfill Remote\\
-\textit{Volunteer Software Developer} \hfill 10/2023--Present
+\textit{Volunteer Software Developer} \hfill Oct. 2023--Present
 \begin{minipage}{\mpwidth}
 \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-\item Designed and built Hackatime in Go (fork of Wakapi), scaling it to handle over 25,000 simultaneous teenagers logging coding time during High Seas event.
-\item Developed multiple Slack bots to improve UX and give a sense of personality in the Hack Club Slack workspace.
-\item Administered PostgreSQL and Linux servers; migrated production data from CockroachDB to self‑hosted Postgres, improving reliability and reducing monthly pricing from \$7k to \$100.
+\item Designed and built Hackatime in Go (fork of Wakapi), scaling it to handle over 25,000 teenagers simultaneously logging coding time during the High Seas event.
+\item Developed multiple Slack bots to improve UX and add personality in the Hack Club Slack workspace.
+\item Administered PostgreSQL and Linux servers; migrated production data from CockroachDB to self-hosted PostgreSQL, improving reliability and reducing monthly pricing from \$7,000 to \$100.
 \end{itemize}
 \end{minipage}
 
@@ -184,7 +184,7 @@ Completing all senior year courses through Cedarville's Dual Enrollment program 
 %----------------------------------------------------------------------------------------
 \section{ACTIVITIES}
 \begin{center}
-{\small Church Audio/Visual Ministry -- 2023--Present \textbar{} National Cyber League -- 2025/09--Present \textbar{} NSA Codebreaker -- 2025/10--Present}
+{\small Church Audio-Visual Ministry \textbar{} National Cyber League \textbar{} NSA Codebreaker}
 \end{center}
 
 \vfill
