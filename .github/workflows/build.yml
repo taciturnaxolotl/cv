@@ -38,6 +38,7 @@ jobs:
             supertabular
             titlesec
             multirow
+            microtype
       - name: Build LaTeX with Makefile
         run: make
       - name: Convert PDF to JPEG
