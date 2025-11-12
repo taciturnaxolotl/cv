@@ -1,60 +1,37 @@
 % cv.tex
 
-%----------------------------------------------------------------------------------------
-%  DOCUMENT DEFINITION
-%----------------------------------------------------------------------------------------
 \documentclass[a4paper,10pt]{article}
 
-%----------------------------------------------------------------------------------------
-%  PACKAGES
-%----------------------------------------------------------------------------------------
-\usepackage[utf8]{inputenc}           % UTF-8 input (machine-readable)
-\usepackage[scale=0.9]{geometry}      % A4 layout
-\usepackage{parskip}                  % Paragraph spacing
-\usepackage{titlesec}                 % Section formatting
-\usepackage{tabularx}                 % Flexible tables
-\usepackage{enumitem}                 % List control
-\usepackage{xcolor}                   % Colors
-\usepackage{graphicx}                 % Graphics
-\usepackage[hidelinks]{hyperref}      % Hyperlinks without boxes
-\usepackage{url}                      % URL formatting
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.9]{geometry}
+\usepackage{parskip}
+\usepackage{titlesec}
+\usepackage{tabularx}
+\usepackage{enumitem}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage[hidelinks]{hyperref}
+\usepackage{url}
 \usepackage[protrusion=true,expansion=true]{microtype}
-
-% Machine-readable text extraction
 \input{glyphtounicode}
 \pdfgentounicode=1
 
-%----------------------------------------------------------------------------------------
-%  CONFIGURATION
-%----------------------------------------------------------------------------------------
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{10pt}
-
+\titlespacing{\section}{0pt}{8pt}{5pt}
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \urlstyle{same}
-
 \newlength{\mpwidth}
-\setlength{\mpwidth}{0.8\textwidth} % bullet text clamp
+\setlength{\mpwidth}{0.8\textwidth}
 
-% Org section: bold org left, location right
 \newenvironment{orgblock}[2]{%
-  \par\noindent
-  \textbf{#1} \hfill #2\\%
-}{%
-  \par\vspace{6pt}%
-}
+  \par\noindent\textbf{#1} \hfill #2\\%
+}{\par\vspace{4pt}}
 
-% Exp section: italic role left, date right, aligned bullets below
 \newenvironment{subxp}[2]{%
-  % Header line
   \noindent\textit{#1} \hfill #2\\%
-  % Clamp bullets to mpwidth and remove default itemize indents
   \begin{minipage}[t]{\mpwidth}%
     \begingroup
-      \setlength{\leftskip}{0pt}%
-      \setlength{\parindent}{0pt}%
-      \setlength{\parskip}{0pt}%
-      % Locally redefine itemize to be flush-left and compact
+      \setlength{\leftskip}{0pt}\setlength{\parindent}{0pt}\setlength{\parskip}{0pt}
       \makeatletter
       \def\my@itemize{%
         \list{\labelitemi}{%
@@ -69,7 +46,6 @@
         }%
       }%
       \makeatother
-      % Use an en-dash as the bullet, matching your original
       \renewcommand{\labelitemi}{\textendash}%
       \my@itemize
 }{%
@@ -79,97 +55,81 @@
   \par\vspace{2pt}%
 }
 
-%----------------------------------------------------------------------------------------
-%  BEGIN DOCUMENT
-%----------------------------------------------------------------------------------------
 \begin{document}
 \pagestyle{empty}
 
-%----------------------------------------------------------------------------------------
-%  TITLE
-%----------------------------------------------------------------------------------------
 \begin{tabularx}{\linewidth}{@{} C @{}}
 \Huge{KIERAN KLUKAS} \\[8pt]
 \raggedright
 Westerville, OH 43081 \textbar{} \href{tel:+13802542562}{(380) 254-2562} \textbar{} \href{mailto:kieran@dunkirk.sh}{kieran@dunkirk.sh} \textbar{} \href{https://linkedin.com/in/kieran-klukas}{linkedin.com/in/kieran-klukas} \textbar{} \href{https://github.com/taciturnaxolotl}{github.com/taciturnaxolotl}
 \end{tabularx}
 
-%----------------------------------------------------------------------------------------
-%  SUMMARY
-%----------------------------------------------------------------------------------------
 \section{SUMMARY}
-Aspiring Computer Engineering and Cyber Operations dual enrollment student with strong technical and interpersonal skills seeking an internship in software engineering or cybersecurity. Passionate about hardware-software integration, robotics, and cybersecurity. Goals include gaining real-world experience and working in the technology sector. Additional skills include:
+Computer Engineering \& Cyber Operations dual-enrollment student with experience in microcontrollers and embedded hardware through personal projects in addition to extension experience programming in a number of languages.
+
+\section{SKILLS}
 \begin{itemize}[nosep,leftmargin=1em,itemsep=1pt,label=--]
-  \item 5+ years of programming experience
-  \item KiCad and hardware design
-  \item Server management and Linux
+  \item C/C++; Embedded Linux; I2C/SPI/UART; Git; NixOS \& Nix
+  \item TypeScript (Bun/node); Go; SQL (PostgreSQL/SQLite); Linux; Docker; systemd
+  \item KiCad; WPILib; Swagger/OpenAPI; typed APIs; Server management
 \end{itemize}
 
-%----------------------------------------------------------------------------------------
-%  EDUCATION
-%----------------------------------------------------------------------------------------
 \section{EDUCATION}
-\textbf{ABET-accredited Cedarville University (CAE-CD, CAE-CO)} \hfill Cedarville, OH\\
+\textbf{Cedarville University (ABET; CAE-CD/CAE-CO)} \hfill Cedarville, OH\\
 \textit{Dual Enrollment, Computer Engineering and Cyber Operations} \hfill Anticipated May 2026\\
 \begin{minipage}{0.8\textwidth}
-  Completing all senior year courses through Cedarville’s Dual Enrollment program and on track to finish freshman Computer Engineering requirements before graduating high school while also taking several Cyber Operations courses.\\
-  \underline{Relevant Coursework:} Basic Cyber Maneuvers; The Engineering Profession; Calculus I
+On track to finish freshman Computer Engineering requirements before HS graduation while completing senior-year courses and several Cyber Operations courses.\\
+  \underline{Relevant Coursework:} Calculus I \& II; Basic \& Advanced Cyber Maneuvers; Object Oriented Design with C++; Digital Logic Design; Intro to Electrical/Computer Engineering
 \end{minipage}
 
-%----------------------------------------------------------------------------------------
-%  EXPERIENCE
-%----------------------------------------------------------------------------------------
+\section{PROJECTS}
+\begin{orgblock}{Cachet -- Slack profile/emoji cache (TypeScript/Bun, SQLite)}{github.com/taciturnaxolotl/cachet}
+  \begin{subxp}{Creator}{2024--Present}
+    \item Touch-to-refresh TTL + off-peak refresh queues; eliminated 1000ms+ latency spikes.
+    \item Handling 1.5M+ requests a month; deployed via systemd on local hardware.
+  \end{subxp}
+\end{orgblock}
+
+\begin{orgblock}{Hackatime -- Code tracking for teenagers (Go, PostgreSQL, Linux)}{Hack Club}
+  \begin{subxp}{Maintainer}{2024--2025}
+    \item Scaled to 25{,}000+ concurrent teen users recording coding time.
+    \item Migrated CockroachDB $\rightarrow$ PostgreSQL; reliability up; infra cost down $\sim\$7{,}000 \rightarrow \$100$/mo.
+  \end{subxp}
+\end{orgblock}
+
+\begin{orgblock}{Thistle + Murmur -- Distributed transcription service}{github.com/taciturnaxolotl/thistle}
+  \begin{subxp}{Creator}{2025--Present}
+    \item Frontend in TypeScript/Bun with lightweight web components; session‑scoped authentication with device/session inventory, forced logout, and remote session revocation.
+    \item Murmur: Swift server using Apple Neural Engine; job-based API with SSE progress; SQLite persistence; VTT compatible exports.
+  \end{subxp}
+\end{orgblock}
+
+\begin{orgblock}{Thyme -- Custom split keyboard (KiCad, ZMK, NRF52840)}{github.com/taciturnaxolotl/thyme}
+  \begin{subxp}{Creator}{2025}
+    \item Designed PCB and case; wireless MCUs (NRF52840) with LiPo power; built ZMK for firmware.
+    \item Hand routed the PCB in KiCad and created case in Onshape.
+  \end{subxp}
+\end{orgblock}
+
+
 \section{EXPERIENCE}
-
-\begin{orgblock}{Cedarville University Center for Advancement of Cybersecurity}{Cedarville, OH}
-  \begin{subxp}{GenCyber Camp Participant}{Jun.\ 2025}
-    \item Achieved 2nd place in Cyber Skyline Cyber Lab Kit Intro CTF, with a 1st place time of 57:58.
-    \item Digital forensics recovering deleted photos; exploited Cacti CVE-2025-22604 for container access.
-  \end{subxp}
-
-  \begin{subxp}{Crimson Defense CDCTF Team Member -- Prochoroume}{Sep.\ 2025}
-    \item Placed 6th out of 51 college teams in cybersecurity capture-the-flag competition.
-    \item Specialized in log and network analysis challenges.
-  \end{subxp}
-\end{orgblock}
-
-\begin{orgblock}{Elmer W. Engstrom School of Engineering and Computer Science}{Cedarville, OH}
-  \begin{subxp}{Cardboard Canoe Race Team Member}{Sep.\ 2025--Oct.\ 2025}
-    \item Worked with a 4-person team to design and build a canoe using a 40-foot roll of cardboard and a roll of packing tape.
-    \item Placed 4th in the race portion of the project against 35 other teams.
-  \end{subxp}
-\end{orgblock}
-
-\begin{orgblock}{FIRST}{Columbus, OH}
-  \begin{subxp}{Chair, Outreach and Sustainability Committee, Ohio Youth Advisory Council}{Aug.\ 2025--Present}
-    \item Led outreach and leadership initiatives for Ohio FIRST programs.
-    \item Coordinate sustainability efforts across multiple robotics teams statewide.
-  \end{subxp}
-
-  \begin{subxp}{Programming Team Co-Lead at FRC Team 1317}{Nov.\ 2023--Present}
-    \item Co-led the programming team for competitive robotics using the WPILib framework.
-    \item Developed and maintained robot control systems for FIRST Robotics Competition.
-    \item Helped secure a winning alliance with teams 4028 and 1787 at the 2025 Ohio State Championship.
-  \end{subxp}
-\end{orgblock}
-
 \begin{orgblock}{Hack Club}{Remote}
   \begin{subxp}{Volunteer Software Developer}{Oct.\ 2023--Present}
-    \item Designed and built Hackatime in Go (fork of Wakapi), scaling it to handle over 25{,}000 teenagers simultaneously logging coding time during the High Seas event.
-    \item Developed multiple Slack bots to improve UX and add personality in the Hack Club Slack.
-    \item Administered PostgreSQL and Linux servers; migrated production from CockroachDB to self-hosted PostgreSQL, improving reliability and reducing monthly pricing from \$7{,}000 to \$100.
+    \item Built/operated telemetry and caching services (Hackatime, Cachet).    \item Developed Slack bots and internal tooling; administered Linux/PostgreSQL.
   \end{subxp}
 \end{orgblock}
 
-%----------------------------------------------------------------------------------------
-%  ACTIVITIES
-%----------------------------------------------------------------------------------------
+\begin{orgblock}{FIRST Robotics (FRC Team 1317)}{Columbus, OH}
+  \begin{subxp}{Programming Team Co-Lead}{Nov.\ 2023--Present}
+    \item Robot control systems with WPILib; winning alliance at 2025 Ohio State Championship.
+  \end{subxp}
+\end{orgblock}
+
 \section{ACTIVITIES}
 \begin{center}
-  {\small Church Audio-Visual Ministry \textbar{} National Cyber League \textbar{} NSA Codebreaker}
+  {\small National Cyber League (Fall 2025): Top 1\% of 7{,}865 \textbar{} GoCyber Collective CTF: 1st/27 \textbar{} CDCTF: 6th/51}
+  \newline
+  {\small Church A/V Ministry \textbar{} NCAE Cyber Games \textbar{} NSA Codebreaker}
 \end{center}
-
-\vfill
-% \center{\footnotesize Last updated: \today}
 
 \end{document}
