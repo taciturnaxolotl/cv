@@ -3,7 +3,7 @@
 \documentclass[a4paper,10pt]{article}
 
 \usepackage[utf8]{inputenc}
-\usepackage[scale=0.9]{geometry}
+\usepackage[scale=0.90]{geometry}
 \usepackage{parskip}
 \usepackage{titlesec}
 \usepackage{tabularx}
@@ -15,7 +15,7 @@
 \pdfgentounicode=1
 
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{8pt}{5pt}
+\titlespacing{\section}{0pt}{6pt}{6pt}
 \newcolumntype{C}{>{\centering\arraybackslash}X}
 \urlstyle{same}
 \newlength{\mpwidth}
@@ -23,7 +23,7 @@
 
 \newenvironment{orgblock}[2]{%
   \par\noindent\textbf{#1} \hfill #2\\%
-}{\par\vspace{4pt}}
+}{\par\vspace{3pt}}
 
 \newenvironment{subxp}[2]{%
   \noindent\textit{#1} \hfill #2\\%
@@ -40,7 +40,7 @@
           \setlength{\parsep}{0pt}%
           \setlength{\topsep}{0pt}%
           \setlength{\partopsep}{0pt}%
-          \setlength{\itemsep}{3pt}%
+          \setlength{\itemsep}{2pt}%
         }%
       }%
       \makeatother
@@ -57,78 +57,76 @@
 \pagestyle{empty}
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{KIERAN KLUKAS} \\[8pt]
+\Huge{KIERAN KLUKAS} \\[6pt]
 \raggedright
-Westerville, OH 43081 \textbar{} \href{tel:+13802542562}{(380) 254-2562} \textbar{} \href{mailto:kieran@dunkirk.sh}{kieran@dunkirk.sh} \textbar{} \href{https://linkedin.com/in/kieran-klukas}{linkedin.com/in/kieran-klukas} \textbar{} \href{https://github.com/taciturnaxolotl}{github.com/taciturnaxolotl}
+Westerville, OH \textbar{} \href{tel:+13802542562}{(380) 254-2562} \textbar{} \href{mailto:kieran@dunkirk.sh}{kieran@dunkirk.sh} \textbar{} \href{https://linkedin.com/in/kieran-klukas}{linkedin.com/in/kieran-klukas} \textbar{} \href{https://github.com/taciturnaxolotl}{github.com/taciturnaxolotl}
 \end{tabularx}
-
-\section{SUMMARY}
-Computer Engineering \& Cyber Operations student with hands-on experience in embedded hardware, competitive cybersecurity, and building production services.
-
-\section{SKILLS}
-\begin{itemize}[nosep,leftmargin=1em,itemsep=1pt,label=--]
-  \item C/C++; Embedded Linux; I2C/SPI/UART; Git; NixOS \& Nix
-  \item TypeScript (Bun/node); Go; SQL (PostgreSQL/SQLite); Linux; Docker; systemd
-  \item KiCad; WPILib; Swagger/OpenAPI; typed APIs; Server management
-\end{itemize}
 
 \section{EDUCATION}
 \textbf{Cedarville University (ABET; CAE-CD/CAE-CO)} \hfill Cedarville, OH\\
 \textit{Computer Engineering and Cyber Operations} \hfill Anticipated May 2030\\
-\begin{minipage}{0.8\textwidth}
-\underline{Relevant Coursework:} Calculus I \& II; Basic \& Advanced Cyber Maneuvers; Object Oriented Design with C++; Digital Logic Design\end{minipage}
-
-\section{PROJECTS}
-\begin{orgblock}{Cachet -- Slack profile/emoji cache (TypeScript/Bun, SQLite)}{github.com/taciturnaxolotl/cachet}
-  \begin{subxp}{Creator}{2024--Present}
-    \item Touch-to-refresh TTL + off-peak refresh queues; eliminated 1000ms+ latency spikes.
-    \item Handles 2.1M+ requests a month; deployed via systemd on local hardware.
-  \end{subxp}
-\end{orgblock}
-
-\begin{orgblock}{Hackatime -- Code tracking for teenagers (Go, PostgreSQL, Linux)}{Hack Club}
-  \begin{subxp}{Maintainer}{2024--2025}
-    \item Scaled to 25{,}000+ concurrent teen users recording coding time.
-    \item Migrated CockroachDB $\rightarrow$ PostgreSQL; reliability up; infra cost down $\sim\$7{,}000 \rightarrow \$100$/mo.
-  \end{subxp}
-\end{orgblock}
-
-\begin{orgblock}{Holy Guacamole -- Meltybrain combat robot (C, KiCad, RP2350)}{github.com/taciturnaxolotl/holy-guacamole}
-  \begin{subxp}{Creator}{June 2026}
-    \item Designed 4-layer PCB with triple-IMU array; wrote gyro-free EKF for heading at 4000+ RPM.
-    \item Validated control loop against SITL simulator running production code.
-  \end{subxp}
-\end{orgblock}
+\underline{Relevant Coursework:} Basic \& Advanced Cyber Maneuvers; Object-Oriented Design (C++); Digital Logic Design
 
 \section{EXPERIENCE}
 \begin{orgblock}{Charm}{Remote}
-  \begin{subxp}{Software Engineering Intern}{2026 Summer}
-    \item Shipped 140+ PRs for Crush (agentic coding CLI) and Hyper (inference platform).
-    \item Developer relations with Discord, Slack, and Github communities.
+  \begin{subxp}{Software Engineering Intern}{May--Aug.\ 2026}
+    \item Ran coordinated disclosure: triaged 15+ reports, published 9 advisories (1 critical, 4 high).
+    \item Shipped Crush's question tool: inline binary, single-choice, and multi-select prompts.
+    \item Merged 220+ PRs; ran developer relations on Discord, Slack, and GitHub.
   \end{subxp}
 \end{orgblock}
 
 \begin{orgblock}{Hack Club}{Remote}
   \begin{subxp}{Volunteer Software Developer}{Oct.\ 2023--Present}
-    \item Build and operate telemetry and caching services (Hackatime, Cachet).
-    \item Develop Slack bots and internal tooling; administer Linux/PostgreSQL.
+    \item Maintained Hackatime, a Go/PostgreSQL coding-time tracker used by 25{,}000+ teens.
+    \item Migrated CockroachDB $\rightarrow$ PostgreSQL; reliability up, infra cost down $\sim\$7{,}000 \rightarrow \$100$/mo.
   \end{subxp}
 \end{orgblock}
 
 \begin{orgblock}{FIRST Robotics (FRC Team 1317)}{Columbus, OH}
-  \begin{subxp}{Programming Team Co-Lead}{Nov.\ 2023--Present}
-    \item Designed Theta Star / APF hybrid autonomous navigation system.
-    \item Won the Innovation in Control Award at the 2026 Pittsburgh Regionals.
+  \begin{subxp}{Programming Team Co-Lead}{Nov.\ 2023--Aug.\ 2026}
+    \item Designed the Theta* / APF hybrid autonomous navigation system.
+    \item Won Innovation in Control at the 2026 Pittsburgh Regional.
   \end{subxp}
 \end{orgblock}
 
-\section{COMPETITIONS}
+\section{PROJECTS}
+\begin{orgblock}{MITRE eCTF -- Hardware security module (C, MSPM0, wolfSSL)}{MITRE}
+  \begin{subxp}{Security Design \& Attack}{Jan.--Mar.\ 2026}
+    \item Built an HSM gating design files behind PIN auth and per-group permissions.
+    \item Encrypted the transfer channel with AES-GCM; blocked glitch-skipped checks with path counters.
+    \item Cut side channels: constant-time compares at random offsets, randomized crypto delays.
+    \item Exploited permission bypasses in competing teams' designs during the attack phase.
+  \end{subxp}
+\end{orgblock}
+
+\begin{orgblock}{Cachet -- Slack profile/emoji cache (TypeScript/Bun, SQLite)}{github.com/taciturnaxolotl/cachet}
+  \begin{subxp}{Author \& Operator}{2024--Present}
+    \item Touch-to-refresh TTL and off-peak queues eliminated 1000ms+ latency spikes.
+    \item Serves 2.1M+ requests/month via systemd on self-hosted hardware.
+  \end{subxp}
+\end{orgblock}
+
+\begin{orgblock}{Holy Guacamole -- Meltybrain combat robot (C, KiCad, RP2350)}{github.com/taciturnaxolotl/holy-guacamole}
+  \begin{subxp}{Hardware \& Firmware}{June--Aug.\ 2026}
+    \item Designed 4-layer PCB with triple-IMU array; wrote gyro-free EKF for heading at 4000+ RPM.
+    \item Validated the control loop against a SITL simulator running production firmware.
+  \end{subxp}
+\end{orgblock}
+
+\section{AWARDS \& COMPETITIONS}
 \begin{itemize}[nosep,leftmargin=1em,itemsep=1pt,label=--]
   \item NCAE Cyber Games Midwest Regional: 1st Place; voted MVP in 8-hour live-fire blue team competition \hfill Feb.\ 2026
-  \item MITRE Embedded CTF (eCTF): Designed a Hardware Security Module and attacked other teams' designs \hfill 2026
-  \item GoCyber Collective CTF: 1st/27 teams; exploited real CVEs to compromise simulated infrastructure \hfill Nov.\ 2025
+  \item GoCyber Collective CTF: 1st/27 teams; exploited CVEs to compromise simulated infrastructure \hfill Nov.\ 2025
   \item National Cyber League (Fall 2025): 120th/7{,}852 individually (top 1\%); 103rd/4{,}215 teams \hfill Oct.\ 2025
-  \item Crimson Defence CTF: 6th/51 teams \hfill Sep.\ 2025
+\end{itemize}
+
+\section{SKILLS}
+\begin{itemize}[nosep,leftmargin=1em,itemsep=1pt,label=--]
+  \item \textbf{Languages:} C/C++; Go (Bubble Tea); Swift; TypeScript (Bun/Node); Python; SQL
+  \item \textbf{Embedded:} KiCad; ARM Cortex-M (RP2350/MSPM0); I2C/SPI/UART; sensor fusion; WPILib
+  \item \textbf{Security:} Coordinated disclosure \& triage; fault-injection \& side-channel hardening; reverse engineering; blue-team ops
+  \item \textbf{Infra:} Linux; NixOS; Docker; systemd; PostgreSQL; OAuth/OIDC; OpenAPI; Git
 \end{itemize}
 
 \end{document}
