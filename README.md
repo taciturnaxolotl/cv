@@ -1,8 +1,8 @@
-# CV
+# Resume
 
-This is my CV and is adapted from the [jitinnair1/autoCV](https://github.com/jitinnair1/autoCV) project.
+This is my resume and is adapted from the [jitinnair1/autoCV](https://github.com/jitinnair1/autoCV) project.
 
-![preview of the cv](https://cv.dunkirk.sh/cv.jpeg)
+![preview of the resume](https://cv.dunkirk.sh/resume.jpeg)
 
 ### Setup
 
@@ -20,7 +20,7 @@ make clean # rm the latex steps
 make distclean # rm the output
 ```
 
-my personal favorite workflow is to open up `cv.tex` in neovim and then use `:!make` to build the pdf and have it auto reload in a pdf viewer.
+my personal favorite workflow is to open up `resume.tex` in neovim and then use `:!make` to build the pdf and have it auto reload in a pdf viewer.
 
 <p align="center">
 	<i><code>&copy 2025-present <a href="https://github.com/taciturnaxolotl">Kieran Klukas</a></code></i>
